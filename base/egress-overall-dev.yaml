@@ -1,0 +1,25 @@
+apiVersion: crd.antrea.io/v1beta1
+kind: ExternalIPPool
+metadata:
+  name: external-ippool-egress
+spec:
+  ipRanges:
+  - end: 10.217.193.251
+    start: 10.217.193.251
+  nodeSelector:
+    matchLabels:
+      node: worker 
+      #node-role.kubernetes.io/worker: ""
+---
+
+
+apiVersion: crd.antrea.io/v1beta1
+kind: Egress
+metadata:
+  name: egress-config-001
+spec:
+  appliedTo:
+    namespaceSelector:
+      matchLabels:
+        ext-net: egress-ip 
+  externalIPPool: external-ippool-egress

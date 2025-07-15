@@ -1,0 +1,3 @@
+resources:
+- external-ip-pool.yaml
+- egress.yaml

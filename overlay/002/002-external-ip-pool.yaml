@@ -1,0 +1,8 @@
+apiVersion: crd.antrea.io/v1beta1
+kind: ExternalIPPool
+metadata:
+  name: <external-ip-pool name>-002 
+spec:
+  ipRanges:
+  - end: ""
+    start: ""
