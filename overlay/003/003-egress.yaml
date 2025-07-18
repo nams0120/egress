@@ -6,5 +6,5 @@ spec:
   appliedTo:
     namespaceSelector:
       matchLabels:
-        key: value 
-  externalIPPool: "" 
+        ext-net-03: egress-ip-03
+  externalIPPool: external-ippool-egress-003

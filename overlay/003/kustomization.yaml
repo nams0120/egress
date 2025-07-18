@@ -1,0 +1,5 @@
+nameSuffix: "-003"
+resources:
+- ../../base
+  #- 002-external-ip-pool.yaml
+  #- 002-egress.yaml

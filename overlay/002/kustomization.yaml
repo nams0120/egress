@@ -1,0 +1,35 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+nameSuffix: "-002"
+
+resources:
+- ../../base
+
+
+patches:
+  - target:
+      kind: ExternalIPPool
+      name: external-ippool-egress
+    patch: |
+      - op: replace
+        path: /spec/ipRanges
+        value:
+          - start: 172.18.101.252
+            end: 172.18.101.252
+
+              #  - target:
+              #      kind: Egress
+              #      name: egress-config 
+              #    patch: |
+              #      - op: replace
+              #        path: /spec/appliedTo/namespaceSelector/matchLabels
+              #        value:
+              #          ext-net-02: egress-ip-02 
+              #
+              #      - op: replace
+              #        path: /spec/externalIPPool
+              #        value: external-ippool-egress-002
+        
+
+  - path: patch-egress.yaml

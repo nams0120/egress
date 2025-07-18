@@ -1,10 +1,10 @@
 apiVersion: crd.antrea.io/v1beta1
 kind: Egress
 metadata:
-  name: <egress name>-002
+  name: egress-config
 spec:
   appliedTo:
     namespaceSelector:
       matchLabels:
-        <label key>: <label value>
-  externalIPPool: <external-ip-pool name>-002
+        ext-net-02: egress-ip-02
+  externalIPPool: external-ippool-egress-002

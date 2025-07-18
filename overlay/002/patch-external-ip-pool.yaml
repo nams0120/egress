@@ -1,8 +1,8 @@
 apiVersion: crd.antrea.io/v1beta1
 kind: ExternalIPPool
 metadata:
-  name: <external-ip-pool name>-002 
+  name: external-ippool-egress
 spec:
   ipRanges:
-  - end: ""
-    start: ""
+  - end: 172.18.101.252
+    start: 172.18.101.252
